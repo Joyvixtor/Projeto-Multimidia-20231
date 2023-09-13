@@ -27,7 +27,7 @@ def get_recommendations(genre, params):
     results = sp.recommendations(seed_genres=[genre], **params)
     if "tracks" in results:
         tracks = results["tracks"]
-        return tracks
+        return [track['uri'] for track in tracks]
     
     return[]
 
@@ -68,8 +68,12 @@ def main():
         'target_energy': energy
         }
     tracks = get_recommendations(style, params)
-    for track in tracks:
-        print(track['name'])
+
+    playlist_name = f"{style.capitalize()} Playlist"
+    playlist_description = f"Playlist para quando você está se sentindo {sentiment} e gosta de {style}."
+
+    create_playlist(playlist_name, playlist_description, tracks)
+    print(f"A playlist '{playlist_name}' foi criada com sucesso!")
 
 
 
