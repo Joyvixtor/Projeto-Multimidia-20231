@@ -2,17 +2,19 @@ body {
     width: 30rem;
     height: auto;
     margin: auto;
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    color: white;
 }
 
-#section-principal {
-    margin: auto;
-    width: auto;
-    height: auto; 
-    display: block;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-between;
-  
+header{
+    text-align: center;
+    font-weight: bold;
+}
+
+.selection_box{
+    background-color: #121212;
+    border-radius: 8px;
 }
 
 .form-p {
@@ -21,15 +23,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 15px;
 }
 
 select {
     width: 10rem;
 }
 
+
+
   /* Estilize o botão */
 button {
-    background-color: transparent;
+    background-color: black;
+    border-radius: 10px;
     border: 2px solid transparent;
     font-size: large;
     color: green;
@@ -38,7 +44,7 @@ button {
     transition: background-color 0.3s ease; 
 }
 
-button::hover {
+button:hover {
     background-color: green;
     color: white; 
     border: 2px solid black;
