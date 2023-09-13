@@ -1,0 +1,45 @@
+body {
+    width: 30rem;
+    height: auto;
+    margin: auto;
+}
+
+#section-principal {
+    margin: auto;
+    width: auto;
+    height: auto; 
+    display: block;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+  
+}
+
+.form-p {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+select {
+    width: 10rem;
+}
+
+  /* Estilize o botão */
+button {
+    background-color: transparent;
+    border: 2px solid transparent;
+    font-size: large;
+    color: green;
+   
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+button::hover {
+    background-color: green;
+    color: white; 
+    border: 2px solid black;
+}
