@@ -49,6 +49,9 @@ const PlaylistGenerator = () => {
     } else if (selectedEmotion === 'Excited') {
       seed_genres = 'electronic,dance,upbeat';
     }
+      else if (selectedEmotion === 'Chill'){
+      seed_genres = 'alternative, acoustic chill, jazz pop, lo-fi chill';
+    }
   
       const queryParams = {
         seed_genres,
@@ -117,7 +120,7 @@ const PlaylistGenerator = () => {
             <option value="Sad">Sad</option>
             <option value="Happy">Happy</option>
             <option value="Excited">Excited</option>
-            <option value='Alternative'>Chill</option>
+            <option value="Chill">Chill</option>
             {/* add mais opcoes de emocoes */}
           </select>
         </label>
