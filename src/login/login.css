@@ -1,0 +1,36 @@
+
+/*html ta definindo para TODAS as páginas*/
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    background-color: black;
+    text-align: center;
+}
+
+.loginPage {
+    border-radius: 20px;
+    margin: 30vh;
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    height: 40vh;
+}
+
+.loginButton{
+    margin: auto;
+    padding: 10px;
+    width: 15%;
+    background-color: #7c25f8;
+    border-radius: 500px;
+}
+
+.loginButton:hover {
+    background-color: #6207e3;
+}
+
+.loginButton a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}

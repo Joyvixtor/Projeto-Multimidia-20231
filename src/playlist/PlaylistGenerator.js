@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./playlistgenerator.css"
 
 const PlaylistGenerator = () => {
   const [selectedEmotion, setSelectedEmotion] = useState('Sad');
