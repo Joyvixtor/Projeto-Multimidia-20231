@@ -108,15 +108,20 @@ const PlaylistGenerator = () => {
   return (
     <div class='playlistGenerator'>
       <h1>Gerador de Playlist</h1>
-      <label>
-        Selecione uma emoção:
-        <select value={selectedEmotion} onChange={handleEmotionChange}>
-          <option value="Sad">Sad</option>
-          <option value="Happy">Happy</option>
-          <option value="Excited">Excited</option>
-          {/* add mais opcoes de emocoes */}
-        </select>
-      </label>
+      <div class="selectEmotionText">
+        <span>Selecione sua emoção abaixo:</span>
+      </div>
+      <div class='selectEmotionInput'>
+        <label>
+          <select value={selectedEmotion} onChange={handleEmotionChange}>
+            <option value="Sad">Sad</option>
+            <option value="Happy">Happy</option>
+            <option value="Excited">Excited</option>
+            <option value='Alternative'>Chill</option>
+            {/* add mais opcoes de emocoes */}
+          </select>
+        </label>
+      </div>
       <button onClick={generatePlaylist}>Gerar Playlist</button>
       {loading && <p>Gerando playlist...</p>}
       {generatedPlaylist.length > 0 && (
