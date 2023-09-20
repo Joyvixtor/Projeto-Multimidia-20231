@@ -47,7 +47,16 @@ const PlaylistGenerator = () => {
     } else if (selectedEmotion === 'Happy') {
       seed_genres = 'pop,dance';
     } else if (selectedEmotion === 'Excited') {
-      seed_genres = 'electronic,dance,upbeat';
+      const confirmExci = window.confirm('Você quer permanecer animado?');
+
+      if (!confirmExci) {
+        setSelectedEmotion('Chill');
+        confirmedEmotion = 'Chill';
+        seed_genres = 'alternative, acoustic chill, jazz pop, lo-fi chill';
+      }
+      else{
+        seed_genres = 'electronic,dance,upbeat';
+      }
     }
       else if (selectedEmotion === 'Chill'){
       seed_genres = 'alternative, acoustic chill, jazz pop, lo-fi chill';
