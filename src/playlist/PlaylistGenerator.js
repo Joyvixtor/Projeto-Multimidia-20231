@@ -27,23 +27,46 @@ const PlaylistGenerator = () => {
     try {
       const accessToken = localStorage.getItem('accessToken');
 
-      const queryParams = {
-        seed_genres: selectedEmotion.toLowerCase(),
-        limit: 10,
-      };
+      let seed_genres = '';
+      let limit = 10;
 
+      let confirmedEmotion = selectedEmotion;
+  
+    if (selectedEmotion === 'Sad') {
+      // Pergunta para confirmar se a pessoa quer continuar triste
+      const confirmSad = window.confirm('Você quer continuar triste?');
+
+      if (!confirmSad) {
+        // Se a pessoa não quer continuar triste, mude para 'Happy'
+        setSelectedEmotion('Happy');
+        confirmedEmotion = 'Happy'
+        seed_genres = 'pop,dance'; // Gêneros para 'Happy'
+      } else {
+        seed_genres = 'acoustic,chill,piano'; // Gêneros para 'Sad'
+      }
+    } else if (selectedEmotion === 'Happy') {
+      seed_genres = 'pop,dance';
+    } else if (selectedEmotion === 'Excited') {
+      seed_genres = 'electronic,dance,upbeat';
+    }
+  
+      const queryParams = {
+        seed_genres,
+        limit,
+      };
+  
       const response = await axios.get('https://api.spotify.com/v1/recommendations', {
         params: queryParams,
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
       });
-
+  
       const recommendedTracks = response.data.tracks;
-
+  
       setGeneratedPlaylist(recommendedTracks);
 
-      const playlistName = selectedEmotion + ' Playlist';
+      const playlistName = confirmedEmotion + ' Playlist';
       const uris = recommendedTracks.map((track) => track.uri);
 
       const createPlaylistResponse = await axios.post(
