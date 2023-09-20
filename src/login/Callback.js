@@ -24,7 +24,7 @@ const Callback = () => {
   }, [location, navigate]);
 
   return (
-    <div>
+    <div class='authenticating'>
       <h1>Autenticando...</h1>
     </div>
   );
