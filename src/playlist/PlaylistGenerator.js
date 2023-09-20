@@ -22,6 +22,8 @@ const PlaylistGenerator = () => {
   const generatePlaylist = async () => {
     setLoading(true);
 
+    setGeneratedPlaylist([]);
+
     try {
       const accessToken = localStorage.getItem('accessToken');
 
@@ -41,7 +43,7 @@ const PlaylistGenerator = () => {
 
       setGeneratedPlaylist(recommendedTracks);
 
-      const playlistName = 'Sua Playlist';
+      const playlistName = selectedEmotion + ' Playlist';
       const uris = recommendedTracks.map((track) => track.uri);
 
       const createPlaylistResponse = await axios.post(
@@ -88,6 +90,7 @@ const PlaylistGenerator = () => {
         <select value={selectedEmotion} onChange={handleEmotionChange}>
           <option value="Sad">Sad</option>
           <option value="Happy">Happy</option>
+          <option value="Excited">Excited</option>
           {/* add mais opcoes de emocoes */}
         </select>
       </label>
