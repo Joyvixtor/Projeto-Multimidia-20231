@@ -81,7 +81,7 @@ const PlaylistGenerator = () => {
   };
 
   return (
-    <div>
+    <div class='playlistGenerator'>
       <h1>Gerador de Playlist</h1>
       <label>
         Selecione uma emoção:
@@ -94,7 +94,7 @@ const PlaylistGenerator = () => {
       <button onClick={generatePlaylist}>Gerar Playlist</button>
       {loading && <p>Gerando playlist...</p>}
       {generatedPlaylist.length > 0 && (
-        <div>
+        <div class="playlistList">
           <h2>Playlist Gerada</h2>
           <ul>
             {generatedPlaylist.map((track) => (

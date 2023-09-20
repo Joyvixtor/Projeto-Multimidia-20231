@@ -1,0 +1,9 @@
+.playlistGenerator{
+    color: white;
+}
+
+.playlistList ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
