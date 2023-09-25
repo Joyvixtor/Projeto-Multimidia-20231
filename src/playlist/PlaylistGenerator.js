@@ -46,6 +46,8 @@ const PlaylistGenerator = () => {
       }
     } else if (selectedEmotion === 'Happy') {
       seed_genres = 'pop,dance';
+
+      //Pergunta se uma pessoa quer permanecer animada
     } else if (selectedEmotion === 'Excited') {
       const confirmExci = window.confirm('Você quer permanecer animado?');
 
@@ -67,7 +69,8 @@ const PlaylistGenerator = () => {
         limit,
       };
   
-      const response = await axios.get('https://api.spotify.com/v1/recommendations', {
+      const response = await axios.get('https://api.spotify.com/v1/recommendations', 
+      {
         params: queryParams,
         headers: {
           Authorization: `Bearer ${accessToken}`,
