@@ -8,7 +8,7 @@ Foi desenvolvido por:
 - [Marcelo Santana](https://github.com/marcsantana)
 - [João Victor de Melo Bezerra](https://github.com/Joyvixtor)
 - [Thiago Souza Farias](https://github.com/thiago-souzaf)
-- Danilo Maranhão
+- Daniel Maranhão
 
 O projeto utiliza o [node.js](https://nodejs.org/en) como ambiente de desenvolvimento para JavaScript e também utiliza [npm] para gerenciador de pacotes para o Node.JS e desenvolvimento em React.JS da nossa aplicação.
 
